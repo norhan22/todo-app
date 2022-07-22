@@ -42,7 +42,7 @@ const macOS = {
 }
 
 module.exports = {
-  productName: 'taxpayer',
+  productName: 'todo',
   appId: 'com.example.app',
   artifactName: 'setup-${version}.${ext}',
   directories: {
