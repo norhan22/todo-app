@@ -1,0 +1,83 @@
+
+.e-nuxt {
+  &-container {
+    min-height: calc(100vh - 50px);
+    background: linear-gradient(to right, #ece9e6, #ffffff);
+    font-family: Helvetica, sans-serif;
+
+    ul {
+      list-style: none;
+
+      padding: 0;
+
+      li {
+        margin-bottom: 5px;
+
+        &::first-letter {
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+
+  &-content {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 100px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  &-logo {
+    width: 400px;
+  }
+
+  &-system-info {
+    padding: 20px;
+    border-top: 1px solid #397c6d;
+    border-bottom: 1px solid #397c6d;
+  }
+
+  &-links {
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  &-button {
+    color: #364758;
+    padding: 5px 20px;
+    border: 1px solid #397c6d;
+    margin: 0 20px;
+    border-radius: 15px;
+    font-size: 1rem;
+
+    &:hover {
+      cursor: pointer;
+      color: white;
+      background-color: #397c6d;
+    }
+  }
+
+  &-form {
+    margin-bottom: 10px;
+
+    label {
+      display: block;
+    }
+
+    input {
+      width: 100%;
+      background: #fff;
+      border: 0;
+      padding: 10px;
+      border-radius: 10px;
+
+      &:focus-visible {
+        outline: 1px solid #ddd;
+      }
+
+    }
+  }
+}
+

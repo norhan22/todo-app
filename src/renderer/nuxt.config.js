@@ -8,17 +8,13 @@ module.exports = {
   ssr: false,
   target: 'static',
   head: {
-    title: 'taxpayer',
+    title: 'todo',
     meta: [{ charset: 'utf-8' }]
   },
   loading: false,
-  plugins: [
-
-  ],
-  buildModules: [
-
-  ],
-  modules: [
-
-  ]
+  srcDir: 'client/',
+  css: ['@/assets/style.scss'],
+  plugins: [],
+  buildModules: [],
+  modules: []
 }
