@@ -32,6 +32,7 @@
     "deepmerge": "^4.2.2",
     "electron": "^16.0.5",
     "electron-builder": "^22.14.5",
+    "electron-data-holder": "^1.0.1",
     "electron-devtools-installer": "^3.2.0",
     "electron-reloader": "^1.2.3",
     "eslint": "8.1.0",
