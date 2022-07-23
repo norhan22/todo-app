@@ -9,7 +9,8 @@
     "lint": "node_modules/.bin/eslint --ext .js,.vue -f ./node_modules/eslint-friendly-formatter ./src",
     "lint:fix": "yarn lint --fix",
     "preinstall": "node .electron-nuxt/check-engines.js",
-    "postinstall": "electron-builder install-app-deps & yarn lint:fix"
+    "postinstall": "electron-builder install-app-deps & yarn lint:fix",
+    "test": "jest --watchAll"
   },
   "keywords": [],
   "author": "norhan <nora.moh.2011@gmail.com>",
@@ -29,6 +30,7 @@
     "@xpda-dev/electron-launcher": "^0.3.0",
     "@xpda-dev/webpack-step": "^0.1.6",
     "cross-env": "^7.0.3",
+    "cypress": "^10.3.1",
     "deepmerge": "^4.2.2",
     "electron": "^16.0.5",
     "electron-builder": "^22.14.5",
@@ -40,9 +42,11 @@
     "eslint-loader": "4.0.2",
     "eslint-plugin-nuxt": "^3.1.0",
     "eslint-plugin-vue": "^8.1.1",
+    "jest": "^28.1.3",
     "node-sass": "^6.0.1",
     "nuxt": "^2.15.8",
     "sass-loader": "^10",
+    "ts-jest": "^28.0.7",
     "webpack": "^4.46.0",
     "webpack-node-externals": "^3.0.0"
   }
