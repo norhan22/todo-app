@@ -1,3 +1,15 @@
+$borderReduis: 5px;
+%inputStyle {
+  width: 100%;
+  background: #fff;
+  border: 0;
+  padding: 10px;
+  border-radius: $borderReduis;
+
+  &:focus-visible {
+    outline: 1px solid #ddd;
+  }
+}
 
 .e-nuxt {
   &-container {
@@ -67,21 +79,64 @@
     }
 
     input {
-      width: 100%;
-      background: #fff;
-      border: 0;
-      padding: 10px;
-      border-radius: 10px;
-
-      &:focus-visible {
-        outline: 1px solid #ddd;
-      }
+      @extend %inputStyle;
 
     }
 
-    .error {
-      color: red;
-    }
+
   }
 }
 
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  > form {
+    width: 80%;
+    margin-bottom: 0;
+  }
+
+  .done {
+    text-decoration: line-through;
+    color: #b7b7b7
+  }
+
+}
+
+button {
+  border: 1px solid #b3b1b1;
+  padding: 5px 11px;
+  cursor: pointer;
+  transition: all .5s;
+  border-radius: $borderReduis;
+
+  &:hover {
+    transform: scale(.9);
+  }
+
+  &.danger {
+    background: #f7bebe;
+    border: 0
+  }
+}
+
+.error {
+  color: red;
+  font-size: smaller;
+}
+
+.success {
+  color: darkgreen;
+  font-size: smaller;
+}
+
+span[contenteditable] {
+  @extend %inputStyle;
+}
+
+.msg-container {
+  text-align: center;
+  height: 10px;
+
+}
