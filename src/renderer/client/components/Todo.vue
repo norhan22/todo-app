@@ -6,39 +6,57 @@
         <form class="e-nuxt-form" @submit.prevent="save">
           <label>Add new Task</label>
           <input v-model="newTask" type="text">
+          <span v-if="error" class="error">{{ error }}</span>
         </form>
         <ul>
-          <li v-for="(task,i) in list" :key="i">
+          <li v-for="(task,i) in tasks" :key="i">
             <input v-model="task.isDone" type="checkbox">
             <span :style="task.isDone?'text-decoration: line-through;':''">{{ task.content }}</span>
           </li>
         </ul>
       </div>
-      <div class="e-nuxt-system-info" />
+      <div class="e-nuxt-system-info"/>
     </div>
   </div>
 </template>
 
 <script>
+import server from '../../server/index.js'
+
 export default {
   name: 'Todo',
   data: () => {
     return {
       newTask: '',
-      list: []
+      tasks: [],
+      error: ''
+
     }
   },
+  computed: {},
   methods: {
-    save () {
+    save() {
       if (!this.newTask) return false
       else {
-        this.list.push({
+        server.todo.addTask({
           content: this.newTask,
           isDone: false
         })
-        this.newTask = ''
+            .then((res) => {
+              console.log(res)
+              this.tasks = res
+              this.newTask = ''
+            })
+            .catch((err) => {
+              this.error = err
+            })
+
+
       }
     }
+  },
+  created() {
+    this.tasks = server.todo.getAllTasks()
   }
 }
 </script>
