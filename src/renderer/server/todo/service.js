@@ -13,7 +13,11 @@ const DB = require("./modal"),
       return new Promise((resolve, reject) => {
         if (!payload.content) reject(errMsg.invalidContent);
         else {
-          const newTask = { id: tasks().length + 1, ...payload };
+          const newTask = {
+            id: tasks().length + 1,
+            editable: false,
+            ...payload,
+          };
           tasks().push(newTask);
           resolve(tasksJson());
         }
@@ -45,9 +49,10 @@ const DB = require("./modal"),
     },
     removeTask: (taskId) => {
       const matchedIndex = tasks().findIndex((e) => e.id === taskId);
+
       return new Promise((resolve, reject) => {
         if (!taskId) reject(errMsg.missedId);
-        else if (!matchedIndex) reject(errMsg.invalidId);
+        else if (matchedIndex === -1) reject(errMsg.invalidId);
         else {
           tasks().splice(matchedIndex, 1);
           resolve(tasksJson());
