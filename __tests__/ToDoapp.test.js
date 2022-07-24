@@ -1,4 +1,5 @@
-import { todo } from "../../../server/index.js";
+jest.mock("./modal", () => require("./__mocks__/modal.js"));
+const todo = require("../src/renderer/server/todo/service");
 
 describe("Todo Add New Task", function () {
   ////////////////////
