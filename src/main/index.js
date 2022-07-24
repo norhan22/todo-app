@@ -19,8 +19,19 @@ app.on("window-all-closed", function () {
 // Standard stuff
 
 // Load here all startup windows
-require("./mainWindow");
 
+// let win;
+//
+// function createWindow() {
+//   // Create the browser window.
+//   win = MainBrowserWindow;
+//
+//   // and load whatever file you want
+//   // win.loadFile('aut.html')
+//   // win.loadURL("http://localhost:4600");
+// }
+//
+// app.on("ready", createWindow);
 try {
   require("electron-reloader")(module);
 } catch (_) {}

@@ -1,4 +1,4 @@
-const DB = require("./modal"),
+const DB = require("./modal.js"),
   tasks = () => DB.tasks,
   tasksJson = () => JSON.parse(JSON.stringify(tasks())),
   targetTask = (id) => tasks().find((e) => e.id === id),
