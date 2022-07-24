@@ -1,14 +1,14 @@
-import BrowserWinHandler from './BrowserWinHandler'
+import BrowserWinHandler from "./BrowserWinHandler";
 
 const winHandler = new BrowserWinHandler({
   height: 600,
-  width: 1000
-})
+  width: 1000,
+});
 
-winHandler.onCreated(_browserWindow => {
-  winHandler.loadPage('/')
+winHandler.onCreated((_browserWindow) => {
+  // winHandler.loadPage("/");
   // Or load custom url
-  // _browserWindow.loadURL('https://google.com')
-})
+  // _browserWindow.loadURL("http://localhost:4600");
+});
 
-export default winHandler
+export default winHandler;
