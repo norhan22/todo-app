@@ -14,20 +14,21 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import './commands'
+import "./commands";
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
 // Hide fetch/XHR requests
-const app = window.top
-if (!app.document.head.querySelector('[data-hide-command-log-request]')) {
-  const style = app.document.createElement('style')
-  style.innerHTML = '.command-name-request, .command-name-xhr { display: none }'
-  style.setAttribute('data-hide-command-log-request', '')
+const app = window.top;
+if (!app.document.head.querySelector("[data-hide-command-log-request]")) {
+  const style = app.document.createElement("style");
+  style.innerHTML =
+    ".command-name-request, .command-name-xhr { display: none }";
+  style.setAttribute("data-hide-command-log-request", "");
 
-  app.document.head.appendChild(style)
+  app.document.head.appendChild(style);
 }
-app.document.getElementById('resizable-panels-root').style.overflowY = 'scroll'
+app.document.getElementById("resizable-panels-root").style.overflowY = "scroll";
 //prevents Cypress from failing the test
-Cypress.on('uncaught:exception', (err, runnable) => false)
+// Cypress.on('uncaught:exception', (err, runnable) => false)
