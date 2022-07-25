@@ -1,13 +1,13 @@
-const { storeDB } = require("electron-data-holder");
+const { storeDB } = require('electron-data-holder')
 
 const data = storeDB(
   {
-    tasks: [],
+    tasks: []
   },
   {
-    fileName: "tasks",
+    fileName: 'tasks'
     // encryption: true,
   }
-);
+)
 
-module.exports = data;
+module.exports = data

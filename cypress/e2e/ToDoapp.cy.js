@@ -1,9 +1,7 @@
 describe("TODO app", function () {
   it("Add Task", () => {
-    // cy.electronVisitUrl("./mainWindow", "http://localhost:4600");
-    cy.visit("/");
+    // cy.electronVisitUrl("./mainWindow", "http://localhost:9080/#/");
+    cy.visit("http://localhost:9080/#/");
+    cy.get("input").type("cypress task 1");
   });
-});
-describe("A", function () {
-  it("TODO app ");
 });

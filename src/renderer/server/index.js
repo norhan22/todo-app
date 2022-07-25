@@ -1,5 +1,5 @@
-const todo = require("./todo/service");
+const todo = require('./todo/service')
 
 export default {
-  todo,
-};
+  todo
+}
