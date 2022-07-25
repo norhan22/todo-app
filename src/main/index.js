@@ -1,11 +1,11 @@
-import {app, BrowserWindow, ipcMain} from "electron";
+import { app, BrowserWindow, ipcMain } from "electron";
 
 const Store = require("electron-store"),
-    electronStore = new Store(),
-    {initDB} = require("electron-data-holder"),
-    dataPath = app.getPath("userData"),
-    fs = require("fs"),
-    DBFolderPath = `${dataPath}/todo`;
+  electronStore = new Store(),
+  { initDB } = require("electron-data-holder"),
+  dataPath = app.getPath("userData"),
+  fs = require("fs"),
+  DBFolderPath = `${dataPath}/todo`;
 
 // Create new folder for the app store
 try {
@@ -16,7 +16,7 @@ try {
   console.error(err);
 }
 electronStore.set("DBFolderPath", DBFolderPath);
-
+console.log("DBFolderPath", DBFolderPath);
 initDB({
   // key: 'the-encryption-key',
   customPath: DBFolderPath,
@@ -45,11 +45,8 @@ app.on("window-all-closed", function () {
 // }
 //
 // app.on("ready", createWindow);
-app.on("ready", () => {
-
-});
+app.on("ready", () => {});
 require("./mainWindow");
 try {
   require("electron-reloader")(module);
-} catch (_) {
-}
+} catch (_) {}
