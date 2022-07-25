@@ -3,6 +3,7 @@
     <div class="e-nuxt-content">
       <div class="e-nuxt-logo">
         <p class="msg-container">
+          <span> The Json file is located at: {{ DBFolderLocations }}</span>
           <span class="error">{{ error }}</span>
           <span class="success">{{ successMsg }}</span>
         </p>
@@ -48,6 +49,9 @@ export default {
   computed: {
     todoRepo() {
       return server.todo
+    },
+    DBFolderLocations() {
+      return window.localStorage.getItem('DBFolderPath') + "/tasks.json"
     }
   },
   created() {

@@ -137,6 +137,8 @@ span[contenteditable] {
 
 .msg-container {
   text-align: center;
-  height: 10px;
+  min-height: 10px;
+  margin-bottom: 10px;
+  color: #727272
 
 }
