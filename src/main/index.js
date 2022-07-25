@@ -1,12 +1,25 @@
-import { app, BrowserWindow } from "electron";
+import {app, BrowserWindow, ipcMain} from "electron";
 
-const { initDB } = require("electron-data-holder");
+const Store = require("electron-store"),
+    electronStore = new Store(),
+    {initDB} = require("electron-data-holder"),
+    dataPath = app.getPath("userData"),
+    fs = require("fs"),
+    DBFolderPath = `${dataPath}/todo`;
 
-// the encryption key must be 32 characters long.
+// Create new folder for the app store
+try {
+  if (!fs.existsSync(DBFolderPath)) {
+    fs.mkdirSync(DBFolderPath);
+  }
+} catch (err) {
+  console.error(err);
+}
+electronStore.set("DBFolderPath", DBFolderPath);
 
 initDB({
   // key: 'the-encryption-key',
-  customPath: "src/DB/",
+  customPath: DBFolderPath,
 });
 
 // pass null instead of the key if you don't wan't to pass it but you want to pass a folder path;
@@ -32,6 +45,11 @@ app.on("window-all-closed", function () {
 // }
 //
 // app.on("ready", createWindow);
+app.on("ready", () => {
+
+});
+require("./mainWindow");
 try {
   require("electron-reloader")(module);
-} catch (_) {}
+} catch (_) {
+}
