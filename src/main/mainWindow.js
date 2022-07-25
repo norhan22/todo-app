@@ -3,10 +3,14 @@ import BrowserWinHandler from "./BrowserWinHandler";
 const winHandler = new BrowserWinHandler({
   height: 600,
   width: 1000,
+  webPreferences: {
+    nodeIntegration: true,
+    contextIsolation: false,
+  },
 });
 
 winHandler.onCreated((_browserWindow) => {
-  // winHandler.loadPage("/");
+  winHandler.loadPage("/");
   // Or load custom url
   // _browserWindow.loadURL("http://localhost:4600");
 });
