@@ -4,7 +4,7 @@ const { initDB } = require("electron-data-holder"),
   dataPath = app.getPath("appData"),
   fs = require("fs"),
   DBFolderPath = `${dataPath}/todo`;
-
+console.log("DBFolderPath", DBFolderPath);
 // Create new folder for the app store
 try {
   if (!fs.existsSync(DBFolderPath)) {

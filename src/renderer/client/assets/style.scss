@@ -11,6 +11,11 @@ $borderReduis: 5px;
   }
 }
 
+body {
+  font-family: Helvetica, sans-serif;
+
+}
+
 .e-nuxt {
   &-container {
     min-height: calc(100vh - 50px);

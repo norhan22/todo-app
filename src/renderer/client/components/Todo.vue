@@ -3,11 +3,10 @@
     <div class="e-nuxt-content">
       <div class="e-nuxt-logo">
         <p class="msg-container">
-          <span> The Json file is located at: {{ DBFolderLocations }}</span>
           <span class="error">{{ error }}</span>
           <span class="success">{{ successMsg }}</span>
         </p>
-        <h1>TODO</h1>
+
         <form class="e-nuxt-form" @submit.prevent="addNew">
           <label>Add new Task</label>
           <input v-model="newTask" type="text">
@@ -50,9 +49,7 @@ export default {
     todoRepo() {
       return server.todo
     },
-    DBFolderLocations() {
-      return window.localStorage.getItem('DBFolderPath') + "/tasks.json"
-    }
+
   },
   created() {
     this.tasks = this.todoRepo.getAllTasks()
