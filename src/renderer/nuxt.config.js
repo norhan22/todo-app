@@ -6,15 +6,15 @@
 
 module.exports = {
   ssr: false,
-  target: 'static',
+  target: "static",
   head: {
-    title: 'todo',
-    meta: [{ charset: 'utf-8' }]
+    title: "todo",
+    meta: [{ charset: "utf-8" }],
   },
   loading: false,
-  srcDir: 'client/',
-  css: ['@/assets/style.scss'],
-  plugins: [],
+  srcDir: "client/",
+  css: ["@/assets/style.scss"],
+  plugins: ["~/plugins/handleDataFromMainProcess.js"],
   buildModules: [],
-  modules: []
-}
+  modules: [],
+};
