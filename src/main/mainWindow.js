@@ -13,7 +13,7 @@ const winHandler = new BrowserWinHandler({
 winHandler.onCreated((_browserWindow) => {
   winHandler.loadPage("/");
   // Or load custom url
-  // _browserWindow.loadURL("http://localhost:4600");
+  // _browserWindow.loadURL(process.env.DEV_SERVER_URL);
 });
 winHandler.created().then((res) => {
   winHandler.sendWebContent([{ name: "DBFolderPath", data: initBDFolder }]);

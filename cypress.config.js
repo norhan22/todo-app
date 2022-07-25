@@ -1,5 +1,6 @@
 const { defineConfig } = require("cypress");
-
+require("dotenv").config();
+console.log("process.env.DEV_SERVER_URL", process.env.DEV_SERVER_URL);
 module.exports = defineConfig({
   e2e: {
     baseUrl: process.env.DEV_SERVER_URL,
