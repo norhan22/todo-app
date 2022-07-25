@@ -1,4 +1,5 @@
 import BrowserWinHandler from "./BrowserWinHandler";
+import initBDFolder from "./initBDFolder";
 
 const winHandler = new BrowserWinHandler({
   height: 600,
@@ -14,5 +15,7 @@ winHandler.onCreated((_browserWindow) => {
   // Or load custom url
   // _browserWindow.loadURL("http://localhost:4600");
 });
-
+winHandler.created().then((res) => {
+  winHandler.sendWebContent([{ name: "DBFolderPath", data: initBDFolder }]);
+});
 export default winHandler;
